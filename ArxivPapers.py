@@ -44,7 +44,7 @@ def arxiv_paper_serach(Topic, proficiency_level, content_depth, learning_context
     text_splitter = RecursiveCharacterTextSplitter(chunk_size=500, chunk_overlap=50)
     paper_chunks = text_splitter.create_documents([text_formatted])
 
-    vectorstore = Chroma.from_documents(documents=paper_chunks, embedding=OpenAIEmbeddings(openai_api_key = st.secrets["openai_api_key"]))
+    vectorstore = Chroma.from_documents(documents=paper_chunks, embedding=OpenAIEmbeddings(openai_api_key = st.secrets["OPENAI_API_KEY"]))
     return vectorstore.as_retriever()
 
 if __name__ == "__main__":
