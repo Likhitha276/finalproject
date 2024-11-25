@@ -11,7 +11,7 @@ with st.sidebar:
     topic = st.text_input("Enter the specific skill or topic you want to learn:")
     proficiency_level = st.selectbox("Proficiency Level", ["Beginner", "Intermediate", "Advance"])
     content_depth = st.selectbox("Content Depth", ["High-level overview", "In-Depth"])
-    learning_platform = st.selectbox("Learning Platforms", ["YouTube", "ArXiv papers", "Wikipedia"])
+    learning_platform = st.selectbox("Learning Platforms", ["ArXiv papers","YouTube", "Wikipedia"])
     learning_context = st.selectbox("Learning Context", ["Academic", "Professional Development", "Personal Interest"])
     llm = RAG_chat(topic=topic, proficiency_level=proficiency_level, content_depth=content_depth, learning_platform=learning_platform, learning_context=learning_context)
     if st.button("Submit"):
